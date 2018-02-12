@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from projects import views
+from home import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-	url(r'^$', views.projects, name='projects'),
-	url(r'^projects/', include('projects.urls')),
+	#url(r'^$', views.projects, name='projects'),
+    url(r'^$', views.home, name='home'),
+    url(r'^home/', include('home.urls')),
+	#url(r'^projects/', include('projects.urls')),
 ]
